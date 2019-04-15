@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "457945436665",
+    "firebase_url": "https://rv7messenger.firebaseio.com",
+    "project_id": "rv7messenger",
+    "storage_bucket": "rv7messenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457945436665:android:714942990439e827",
+        "android_client_info": {
+          "package_name": "com.example.rv7messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457945436665-u7qjsjfj6rcc6uaqate150u8agt5ae2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rv7messenger",
+            "certificate_hash": "f4217f1b665ced9dc5233334254bf128da68e226"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0FJQdZqCnLsaYr4gvu821w31ycnkvvBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457945436665-lg71ab637d475nvnge1h57ai9d5bebaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
