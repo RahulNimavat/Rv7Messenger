@@ -4,15 +4,14 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -107,11 +106,14 @@ class SignupActivity : AppCompatActivity() {
 
         val u_ref=FirebaseDatabase.getInstance().getReference("/users/$uid")
 
-        val user = User(uid!!,usr_name_field.text.toString(),profilePicUrl)
+        val user = User(uid!!,usr_name_field.text.toString(),profilePicUrl,pass_field.text.toString())
         u_ref.setValue(user)
             .addOnSuccessListener {
                 Log.d("final","saved user to fdatabase")
 
+                val intent = Intent(this,LatestMessages::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
             }
             .addOnFailureListener {
                 Log.d("final","failed to save user to fdatabase:${it.message}")
@@ -119,4 +121,6 @@ class SignupActivity : AppCompatActivity() {
     }
 }
 
-class User(val uid:String,val userName:String,val profilePicUrl:String)
+class User(val uid:String,val userName:String,val profilePicUrl:String, val pass:String){
+    constructor():this("","","","")
+}
